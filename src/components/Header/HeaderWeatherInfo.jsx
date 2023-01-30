@@ -35,17 +35,41 @@ const HeaderWeatherInfo = function () {
   }, [location]);
 
   return (
-    <div className="border-2 border-white">
+    <div className="rounded-lg bg-gray-700 px-6 py-3">
       {!weatherData && <div>Weather info loading...</div>}
 
       {weatherData && (
-        <div>
-          <div>{weatherData.name}</div>
-          <div>{Math.floor(weatherData.main.temp - 272.15)}°C</div>
-          <div>{weatherData.weather[0].main}</div>
-          <img src={weatherIcon} alt="Weather icon" />
-          <div>Humidity: {weatherData.main.humidity}%</div>
-          <div>Wind: {Math.floor(weatherData.wind.speed * 1.61)} km/h </div>
+        <div className="flex items-center justify-center gap-6">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-baseline gap-2">
+              <h3 className="text-3xl font-bold">{weatherData.name}</h3>
+              <p className="text-base font-light tracking-wide opacity-50">
+                ({weatherData.weather[0].main})
+              </p>
+            </div>
+            <ul>
+              <li>
+                <span className="font-light tracking-wide opacity-50">
+                  Humidity:
+                </span>{' '}
+                {weatherData.main.humidity}%
+              </li>
+              <li>
+                <span className="font-light tracking-wide opacity-50">
+                  Wind:
+                </span>{' '}
+                {Math.floor(weatherData.wind.speed * 1.61)} km/h{' '}
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center gap-2">
+            <img src={weatherIcon} alt="Weather icon" />
+            <div className="flex items-baseline gap-2">
+              <p className="text-5xl font-bold">
+                {Math.floor(weatherData.main.temp - 272.15)}°C
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -51,19 +51,21 @@ function App() {
   }
 
   return (
-    <div className="App h-screen bg-stone-900 text-white">
+    <div className="App h-screen bg-gray-900 p-4 text-white">
       <Header />
-      <Info
-        todos={todos}
-        handleDeleteAll={deleteAllTodos}
-        handleCompleteAll={completeAllTodos}
-      />
-      <AddTodoItem handleAddTodos={addTodos} />
-      <TodoItems
-        todos={todos}
-        handleCheckbox={toggleCompleted}
-        handleDelete={deleteTodo}
-      />
+      <div className="mx-auto mt-[3rem] flex w-[330px] flex-col ">
+        <Info
+          todos={todos}
+          handleDeleteAll={deleteAllTodos}
+          handleCompleteAll={completeAllTodos}
+        />
+        <AddTodoItem handleAddTodos={addTodos} />
+        <TodoItems
+          todos={todos}
+          handleCheckbox={toggleCompleted}
+          handleDelete={deleteTodo}
+        />
+      </div>
     </div>
   );
 }

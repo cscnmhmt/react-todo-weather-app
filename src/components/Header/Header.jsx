@@ -4,7 +4,7 @@ import HeaderWeatherInfo from './HeaderWeatherInfo';
 
 const Header = () => {
   return (
-    <div>
+    <div className="flex items-center justify-between">
       <HeaderDayInfo />
       <HeaderWeatherInfo />
     </div>

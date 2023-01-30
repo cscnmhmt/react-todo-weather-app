@@ -25,11 +25,11 @@ const HeaderDayInfo = () => {
   }, []);
 
   return (
-    <div>
-      <div>{day}</div>
-      <div>
+    <div className="rounded-lg bg-gray-700 px-6 py-3  text-2xl font-bold text-white">
+      <h3>{day}</h3>
+      <h4>
         {new Date().getHours()}:{new Date().getMinutes()}
-      </div>
+      </h4>
     </div>
   );
 };
