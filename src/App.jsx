@@ -51,9 +51,9 @@ function App() {
   }
 
   return (
-    <div className="App h-screen bg-gray-900 p-4 text-white">
+    <div className="App p-4 text-white">
       <Header />
-      <div className="mx-auto mt-[3rem] flex w-[330px] flex-col ">
+      <div className="mx-auto mt-[1rem] flex  w-full flex-col bg-gray-800 p-2 rounded-lg md:w-[330px] md:mt-[3rem] md:bg-transparent md:p-0">
         <Info
           todos={todos}
           handleDeleteAll={deleteAllTodos}

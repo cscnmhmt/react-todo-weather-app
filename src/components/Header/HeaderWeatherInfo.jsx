@@ -35,11 +35,11 @@ const HeaderWeatherInfo = function () {
   }, [location]);
 
   return (
-    <div className="rounded-lg bg-gray-700 px-6 py-3">
+    <div className="rounded-lg bg-gray-800 px-6 py-3 max-md:pb-0 max-md:w-full">
       {!weatherData && <div>Weather info loading...</div>}
 
       {weatherData && (
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-baseline md:items-center justify-between md:justify-center gap-6">
           <div className="flex flex-col gap-2">
             <div className="flex items-baseline gap-2">
               <h3 className="text-3xl font-bold">{weatherData.name}</h3>
@@ -62,10 +62,10 @@ const HeaderWeatherInfo = function () {
               </li>
             </ul>
           </div>
-          <div className="flex items-center gap-2">
-            <img src={weatherIcon} alt="Weather icon" />
+          <div className="flex flex-col md:flex-row max-md:flex-col-reverse max-md:gap-0 items-center gap-2">
+            <img src={weatherIcon} alt="Weather icon" className="max-md:w-[80px] max-md:h-[80px]"/>
             <div className="flex items-baseline gap-2">
-              <p className="text-5xl font-bold">
+              <p className="text-3xl md:text-5xl font-bold">
                 {Math.floor(weatherData.main.temp - 272.15)}°C
               </p>
             </div>
